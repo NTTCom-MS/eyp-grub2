@@ -1,5 +1,17 @@
 # CHANGELOG
 
-# 0.1.6
+## 0.1.9
+
+* added a variable to be able to set a custom mode and ownership for **boot.cfg**
+
+## 0.1.8
+
+* **boot.cfg** owner and mode under puppet management
+
+## 0.1.7
+
+* bugfix sed GRUB_CMDLINE_LINUX
+
+## 0.1.6
 
 * added fact **eyp_grub2_booted**
