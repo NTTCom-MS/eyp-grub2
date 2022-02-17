@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.23
+
+* Added **ioscheduler** to select kernel I/O scheduler
+
 ## 0.1.12
 
 * Added support for RHEL 8
