@@ -7,6 +7,8 @@ class grub2 (
               $bootcfg_group                            = 'root',
               $bootcfg_mode                             = '0400',
               $disable_consistent_network_device_naming = false,
+              $ioscheduler                              = undef,
+
             ) inherits grub2::params {
 
   Exec {
@@ -41,6 +43,15 @@ class grub2 (
     exec { 'grub2 transparent huge pages':
       command => "sed 's/^GRUB_CMDLINE_LINUX=\"\\?\\([^\"]*\\)\"\\?/GRUB_CMDLINE_LINUX=\"\\1 transparent_hugepage=${transparent_huge_pages}\"/' -i /etc/default/grub",
       unless  => "grep 'transparent_hugepage=${transparent_huge_pages}' /etc/default/grub",
+      notify  => Exec['grub2-mkconfig'],
+    }
+  }
+  
+  if($ioscheduler!=undef)
+  {
+    exec { 'grub2 ioscheduler':
+      command => "sed 's/^GRUB_CMDLINE_LINUX=\"\\?\\([^\"]*\\)\"\\?/GRUB_CMDLINE_LINUX=\"\\1 elevator=${ioscheduler}\"/' -i /etc/default/grub",
+      unless  => "grep 'elevator=${ioscheduler}' /etc/default/grub",
       notify  => Exec['grub2-mkconfig'],
     }
   }
