@@ -15,7 +15,7 @@ class grub2::params {
         {
           $bootcfg_bios='/boot/grub/grub.cfg'
         }
-        /^7.*$/:
+        /^[7-8].*$/:
         {
           $bootcfg_bios='/boot/grub2/grub.cfg'
         }
