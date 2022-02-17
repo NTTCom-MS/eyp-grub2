@@ -1,6 +1,6 @@
 {
   "name": "eyp-grub2",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "author": "eyp",
   "summary": "grub2 module to enable transparent_huge_pages on CentOS 7",
   "license": "Apache-2.0",
@@ -13,7 +13,7 @@
   "operatingsystem_support": [
     {
       "operatingsystem": "RedHat",
-      "operatingsystemrelease": [ "5", "6", "7" ]
+      "operatingsystemrelease": [ "5", "6", "7", "8" ]
     },
     {
       "operatingsystem": "CentOS",
